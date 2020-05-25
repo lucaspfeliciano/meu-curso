@@ -1,10 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
-// import { Container } from './styles';
-
-const Register = () => {
-  return <View />;
+export default function Register() {
+  return (
+    <View>
+      <Text>Register</Text>
+    </View>
+  ) 
 }
-
-export default Register;
