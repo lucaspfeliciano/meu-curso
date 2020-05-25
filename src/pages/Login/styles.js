@@ -9,28 +9,32 @@ export default StyleSheet.create({
         backgroundColor: '#FFF',
     },
     logoContainer: {
+        marginTop: 20,
+        marginBottom: 15,
         justifyContent: 'center',
         alignItems: 'center',
+
     },
     logo: {
-       height: 150,
-       width: 300,
+       height: 135,
+       width: 250,
        marginBottom: 15
     },
     textContainer: {
         paddingHorizontal: 30,
-        marginBottom: 20
+        marginBottom: 40,
+        marginTop: 10
     },
     topText: {
         fontSize: 16,
         marginBottom: 10,
-        color: '#29808e'
+        color: '#22215B'
     },
     tittleText: {
         fontSize: 40,
         fontWeight: 'bold',
         marginBottom: 10,
-        color: '#29808e'
+        color: '#22215B'
     },
     descriptionText: {
         color: '#7B7F9E',
@@ -39,22 +43,21 @@ export default StyleSheet.create({
     form: {
         alignSelf: 'stretch',
         paddingHorizontal: 30,
-        marginTop: 30,
-        marginBottom: 30
+        marginBottom: 22
     },
     input: {
         borderWidth: 1,
-        borderColor: '#29808e',
+        borderColor: '#567DF4',
         paddingHorizontal: 20,
         fontSize: 16,
         backgroundColor: '#f0f0f0',
-        height: 44,
+        height: 50,
         marginBottom: 20,
         borderRadius: 10
     },
     submitButton: {
-        height: 42,
-        backgroundColor: '#29808e',
+        height: 50,
+        backgroundColor: '#567DF4',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,
@@ -63,12 +66,11 @@ export default StyleSheet.create({
         color: '#FFF'
     },
     registerButton: {
-        height: 42,
         justifyContent: 'center',
         alignItems: 'center',
     },
     registerButtonText: {
-        color: '#db433a'
+        color: '#000'
     }
 
 })

@@ -19,7 +19,7 @@ export default function Login() {
         <View style={styles.textContainer}>
           <Text style={styles.topText}>Bem-vindo ao</Text>
           <Text style={styles.tittleText}>Meu Curso</Text>
-          <Text style={styles.descriptionText}>Leia relatos de pessoas sobre todos os cursos e descubra com qual você mais se identifica</Text>
+          <Text style={styles.descriptionText}>Leia relatos de pessoas sobre todos os cursos para ajudar a escolher o seu.</Text>
         </View>
 
         <KeyboardAvoidingView style={styles.form}>
