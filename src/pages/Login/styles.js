@@ -70,7 +70,12 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     registerButtonText: {
-        color: '#000'
+        color: '#000',
+        paddingHorizontal: 25
+    },
+    bottomButtons: {
+        flexDirection: 'row',
+        justifyContent: 'center',
     }
 
 })

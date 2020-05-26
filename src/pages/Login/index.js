@@ -50,9 +50,14 @@ export default function Login() {
           </TouchableOpacity>
         </KeyboardAvoidingView>
 
-        <TouchableOpacity style={styles.registerButton} onPress={() => {}}>
-            <Text style={styles.registerButtonText}>Crie uma conta</Text>
+        <View style={styles.bottomButtons}>
+          <TouchableOpacity style={styles.registerButton} onPress={() => {}}>
+              <Text style={styles.registerButtonText}>Criar nova conta</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.registerButton} onPress={() => {}}>
+              <Text style={styles.registerButtonText}>Esqueci a senha</Text>
+          </TouchableOpacity>
+        </View> 
 
     </KeyboardAvoidingView>
   ) 
