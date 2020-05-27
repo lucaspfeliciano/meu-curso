@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import logo from '../../assets/logo.png'
+import logoImg from '../../assets/logo.png'
 import styles from './styles';
 
 export default function Login() {
@@ -9,11 +10,17 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigation = useNavigation();
+
+  function navigateToRegister() {
+    navigation.navigate('Register')
+}
+
   return (
     <KeyboardAvoidingView behavior='position' style={styles.container}>
 
         <View style={styles.logoContainer}>
-          <Image source={logo} style={styles.logo}/>
+          <Image source={logoImg} style={styles.logo}/>
         </View>
 
         <View style={styles.textContainer}>
@@ -22,7 +29,7 @@ export default function Login() {
           <Text style={styles.descriptionText}>Leia relatos de pessoas sobre todos os cursos para ajudar a escolher o seu.</Text>
         </View>
 
-        <KeyboardAvoidingView style={styles.form}>
+        <View style={styles.form}>
           <TextInput
           style={styles.input}
           placeholder="Seu e-Mail"
@@ -48,10 +55,10 @@ export default function Login() {
           <TouchableOpacity style={styles.submitButton} onPress={() => {}}>
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
-        </KeyboardAvoidingView>
+        </View>
 
         <View style={styles.bottomButtons}>
-          <TouchableOpacity style={styles.registerButton} onPress={() => {}}>
+          <TouchableOpacity style={styles.registerButton} onPress={() => navigateToRegister()}>
               <Text style={styles.registerButtonText}>Criar nova conta</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.registerButton} onPress={() => {}}>

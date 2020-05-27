@@ -76,6 +76,6 @@ export default StyleSheet.create({
     bottomButtons: {
         flexDirection: 'row',
         justifyContent: 'center',
-    }
+    },
 
 })
