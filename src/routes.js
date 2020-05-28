@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+import { Feather } from '@expo/vector-icons'
 
 import Login from './pages/Login';
 import Home from './pages/Home';
@@ -10,8 +13,9 @@ import ForgotPassword from './pages/ForgotPassword';
 
 
 const StackNavigator = createStackNavigator()
+const Tab = createMaterialBottomTabNavigator();
 
-export default function AuthStack() {
+function AuthStack() {
     return (
         <StackNavigator.Navigator screenOptions={{ headerShown: false }}>
             <StackNavigator.Screen name="Login" component={Login} />
@@ -21,12 +25,34 @@ export default function AuthStack() {
     )
 }
 
-function AppStack() {
-    return (
-        <StackNavigator.Navigator screenOptions={{ headerShown: false }}>
-            <StackNavigator.Screen name="Home" component={Home} />
-            <StackNavigator.Screen name="Profile" component={Profile} />
-        </StackNavigator.Navigator>
-    )
+
+export default function SignTab() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Home"
+      activeColor="#fff"
+      barStyle={{ backgroundColor: '#567DF4' }}
+    >
+      <Tab.Screen
+        name="Inicio"
+        component={Home}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Feather name="grid" color={color} size={22} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Perfil"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Feather name="user" color={color} size={22} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
 }
+
 
