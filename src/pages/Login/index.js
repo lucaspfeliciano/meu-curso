@@ -16,12 +16,12 @@ export default function Login() {
     navigation.navigate('Register')
 }
 
-  return (
-    <KeyboardAvoidingView behavior='position' style={styles.container}>
+  function navigateToForgotPassword() {
+    navigation.navigate('ForgotPassword')
+}
 
-        <View style={styles.logoContainer}>
-          <Image source={logoImg} style={styles.logo}/>
-        </View>
+  return (
+    <KeyboardAvoidingView behavior='padding' style={styles.container}>
 
         <View style={styles.textContainer}>
           <Text style={styles.topText}>Bem-vindo ao</Text>
@@ -58,13 +58,17 @@ export default function Login() {
         </View>
 
         <View style={styles.bottomButtons}>
-          <TouchableOpacity style={styles.registerButton} onPress={() => navigateToRegister()}>
+          <TouchableOpacity style={styles.registerButton} onPress={navigateToRegister}>
               <Text style={styles.registerButtonText}>Criar nova conta</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.registerButton} onPress={() => {}}>
+          <TouchableOpacity style={styles.registerButton} onPress={navigateToForgotPassword}>
               <Text style={styles.registerButtonText}>Esqueci a senha</Text>
           </TouchableOpacity>
         </View> 
+
+        <View style={styles.logoContainer}>
+          <Image source={logoImg} style={styles.logo}/>
+        </View>
 
     </KeyboardAvoidingView>
   ) 

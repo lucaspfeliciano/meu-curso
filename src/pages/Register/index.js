@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, TouchableOpacity, KeyboardAvoidingView, TextInput, Image } from 'react-native';
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, TextInput, Image, Platform } from 'react-native';
 import { Feather } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 
@@ -20,7 +20,7 @@ export default function Register() {
  }
 
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
 
       <View style={styles.header}>
         <TouchableOpacity onPress={navigateBack}>
@@ -69,12 +69,12 @@ export default function Register() {
           
 
           <TouchableOpacity style={styles.submitButton} onPress={() => {}}>
-            <Text style={styles.buttonText}>Cadastra-se</Text>
+            <Text style={styles.buttonText}>Cadastre-se</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.logoView}>
-        <Image source={logo} style={styles.logo} />
+          <Image source={logo} style={styles.logo} />
         </View>
         
     </KeyboardAvoidingView>
