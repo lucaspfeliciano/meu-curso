@@ -1,7 +1,11 @@
 import React from 'react';
 
+import {createAppContainer} from 'react-navigation';
+
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { Transition } from 'react-native-reanimated';
+import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 
 import { Feather } from '@expo/vector-icons'
 
@@ -26,7 +30,7 @@ function AuthStack() {
 }
 
 
-export default function SignTab() {
+ function SignTab() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -55,4 +59,20 @@ export default function SignTab() {
   );
 }
 
+const MySwitch = createAnimatedSwitchNavigator(
+  {
+    SignTab: SignTab,
+    AuthStack: AuthStack,
+  },
+  {
+    initialRouteName: 'AuthStack',
+    transition: (
+      <Transition.Together>
+        <Transition.Out type="fade" durationMs={200} interpolation="easeIn" />
+        <Transition.In type="fade" durationMs={500} />
+      </Transition.Together>
+    ),
+  })
+
+export default createAppContainer(MySwitch);
 
