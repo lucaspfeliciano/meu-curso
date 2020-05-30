@@ -1,11 +1,8 @@
-import React from 'react';
-
-import {createAppContainer} from 'react-navigation';
+import React, {useEffect, useState} from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { Transition } from 'react-native-reanimated';
-import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 
 import { Feather } from '@expo/vector-icons'
 
@@ -20,6 +17,7 @@ const StackNavigator = createStackNavigator()
 const Tab = createMaterialBottomTabNavigator();
 
 function AuthStack() {
+  
     return (
         <StackNavigator.Navigator screenOptions={{ headerShown: false }}>
             <StackNavigator.Screen name="Login" component={Login} />
@@ -30,7 +28,7 @@ function AuthStack() {
 }
 
 
- function SignTab() {
+ function LoggedTab() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -59,20 +57,17 @@ function AuthStack() {
   );
 }
 
-const MySwitch = createAnimatedSwitchNavigator(
-  {
-    SignTab: SignTab,
-    AuthStack: AuthStack,
-  },
-  {
-    initialRouteName: 'AuthStack',
-    transition: (
-      <Transition.Together>
-        <Transition.Out type="fade" durationMs={200} interpolation="easeIn" />
-        <Transition.In type="fade" durationMs={500} />
-      </Transition.Together>
-    ),
-  })
+// ENCONTRAR MELHOR FORMA DE FAZER NAVEGAÇÃO ENTRE AS ROTAS DE USUARIO LOGADO E NÃO LOGADO
+// NÃO CONSEGUI NAVEGAR AO COLOCAR AO FAZER LOGIN
+// SWITCH NAVIGATOR COM APP CONTAINER (NÃO CONSEGUI FAZER A NAVEGAÇÃO ENTRE AS ROTAS)
 
-export default createAppContainer(MySwitch);
+export default function Routes() {
+  return (
+  <StackNavigator.Navigator screenOptions={{ headerShown: false }}>
+    <StackNavigator.Screen name="AuthStack" component={AuthStack} />
+    <StackNavigator.Screen name="LoggedTab" component={LoggedTab} />
+ </StackNavigator.Navigator>
+ )
+}
+
 

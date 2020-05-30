@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import logoImg from '../../assets/logo.png'
 import styles from './styles';
 
-export default function Login() {
+export default function Login({ navigation }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigation = useNavigation();
 
   function navigateToRegister() {
     navigation.navigate('Register')
@@ -19,6 +18,11 @@ export default function Login() {
   function navigateToForgotPassword() {
     navigation.navigate('ForgotPassword')
 }
+
+  function login() {
+    AsyncStorage.setItem('userToken', email);
+    navigation.navigate('LoggedTab')
+  }
 
   return (
     <KeyboardAvoidingView behavior='padding' style={styles.container}>
@@ -52,7 +56,7 @@ export default function Login() {
           value={password}
           />
 
-          <TouchableOpacity style={styles.submitButton} onPress={() => {}}>
+          <TouchableOpacity style={styles.submitButton} onPress={login}>
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
         </View>
