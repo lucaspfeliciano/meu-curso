@@ -18,7 +18,7 @@ export default StyleSheet.create({
     logo: {
        height: 135,
        width: 250,
-       marginBottom: 15
+       marginTop: 15
     },
     textContainer: {
         paddingHorizontal: 30,
