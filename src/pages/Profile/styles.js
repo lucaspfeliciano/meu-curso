@@ -23,16 +23,17 @@ export default StyleSheet.create({
    headerText: {
        fontSize: 16,
        color: "#22215B",
-       textAlign: "center"
+       textAlign: "center",
+       fontWeight: 'bold'
    },
 
    profileCard: {
-       height: 200,
+       height: 180,
        backgroundColor: "#E0F2FF",
        alignItems: 'center',
        justifyContent: 'center',
-      marginBottom: 30,
-      borderRadius: 20,
+       marginBottom: 30,
+       borderRadius: 20,
    },
 
    profileImage: {
@@ -51,7 +52,59 @@ export default StyleSheet.create({
 
    profileCourse: {
     fontSize: 15,
-    color: '#22215B',
+    color: '#22215B'
+   },
 
-   }    
+   taskbar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+   },
+
+   taskbarText: {
+       fontSize: 18,
+       color: '#22215B',
+       fontWeight: '500',
+       textAlign: 'center',
+      marginBottom: 30,
+   },
+
+   addReport: {
+       flexDirection: 'row',
+       alignItems: 'center'
+   },
+
+   addReportText: {
+    color: '#22215B',
+    fontWeight: '500',
+    paddingHorizontal: 5
+   },
+
+   reportContainer: {
+       height: 65,
+       flexDirection: 'row',
+       backgroundColor: '#E0F2FF',
+       justifyContent: 'space-between',
+       alignItems: 'center',
+       paddingHorizontal: 10,
+       borderRadius: 8,
+       marginBottom: 14
+
+   },
+
+   reportTexts: {
+    paddingHorizontal: 25
+   },
+
+   reportTitle: {
+       color: '#415EB6',
+       fontSize: 18,
+       fontWeight: '500'
+   },
+
+   reportDate: {
+    color: '#415EB6',
+    fontSize: 14,
+}
+
 })
