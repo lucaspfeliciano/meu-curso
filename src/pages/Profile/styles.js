@@ -12,11 +12,11 @@ export default StyleSheet.create({
    },
 
    header: {
-      height: 50,
+      height: 40,
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent:'space-between',
-      marginBottom: 30,
+      marginBottom: 15,
       paddingHorizontal: 20
    },
 
@@ -47,7 +47,7 @@ export default StyleSheet.create({
        fontSize: 18,
        fontWeight: 'bold',
        color: '#22215B',
-       marginBottom: 10
+       marginBottom: 5
    },
 
    profileCourse: {

@@ -28,9 +28,10 @@ export default function Profile() {
 
       <FlatList 
           data={[1, 2]}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => ( <TouchableOpacity onPress={() => {}}>
-          <View key={item} style={styles.reportContainer}>
+          keyExtractor={item => String(item)}
+          renderItem={({ item }) => ( 
+          <TouchableOpacity onPress={() => {}}>
+          <View style={styles.reportContainer}>
             <Feather name="folder" size={32} color="#415EB6" />
             <View style={styles.reportTexts}>
               <Text style={styles.reportTitle}>Sistemas de Informação</Text>
